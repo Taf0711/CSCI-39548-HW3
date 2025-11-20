@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Base styles matching HW1 */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #e8e8e8;
+}
+
