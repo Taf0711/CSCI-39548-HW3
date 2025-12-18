@@ -1,9 +1,29 @@
 @import "tailwindcss";
 
-/* Base styles matching HW1 */
+/* Restaurant Design Theme */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-  background-color: #e8e8e8;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #2c2c2c;
+  background-color: #f5f1e8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f1e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8956a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9a7a4f;
 }
 

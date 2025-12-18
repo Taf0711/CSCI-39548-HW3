@@ -11,61 +11,99 @@ const Header = ({ onCartClick }: HeaderProps) => {
     const { totalItems } = useCart();
 
     return (
-        <header className="bg-black/80 p-5">
-            <nav className="max-w-7xl mx-auto">
-                <div className="logo text-white text-2xl font-light mb-2.5 tracking-[2px]">
-                    Spice & Saffron
+        <header className="bg-[#f5f1e8] border-b border-[#d4c5a0] shadow-sm sticky top-0 z-40">
+            <nav className="max-w-7xl mx-auto px-6 py-4">
+                <div className="flex items-center justify-between">
+                    {/* Left Navigation */}
+                    <ul className="hidden md:flex items-center space-x-8 flex-1">
+                        <li>
+                            <Link to="/menu" className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] transition-colors">
+                                Menu
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/#about" className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] transition-colors">
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] transition-colors">
+                                Reservations
+                            </Link>
+                        </li>
+                    </ul>
+
+                    {/* Center Logo */}
+                    <div className="flex-1 text-center">
+                        <Link to="/" className="text-[#b8956a] text-3xl md:text-4xl font-serif tracking-wide no-underline hover:text-[#9a7a4f] transition-colors">
+                            Spice & Saffron
+                        </Link>
+                    </div>
+
+                    {/* Right Navigation */}
+                    <ul className="hidden md:flex items-center space-x-8 flex-1 justify-end">
+                        <li>
+                            <Link to="/menu" className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] transition-colors">
+                                Order Online
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] transition-colors">
+                                Contact
+                            </Link>
+                        </li>
+                        <li>
+                            <button
+                                onClick={onCartClick}
+                                className="text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] bg-transparent border-none cursor-pointer relative transition-colors"
+                            >
+                                Cart ({totalItems}) 🛒
+                            </button>
+                        </li>
+                    </ul>
+
+                    {/* Mobile Hamburger */}
+                    <button
+                        className="md:hidden text-[#2c2c2c] p-2"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
 
-                {/* Hamburger Menu */}
-                <div
-                    className="hamburger md:hidden cursor-pointer"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    <span className="block w-6 h-0.5 bg-white mb-1.5"></span>
-                    <span className="block w-6 h-0.5 bg-white mb-1.5"></span>
-                    <span className="block w-6 h-0.5 bg-white"></span>
-                </div>
-
-                {/* Navigation Links */}
-                <ul
-                    className={`nav-links list-none ${mobileMenuOpen ? 'block bg-black/90 py-5 md:bg-transparent md:py-0' : 'hidden'
-                        } md:block`}
-                >
-                    <li className="inline-block mr-7 my-2.5 md:my-0">
-                        <Link to="/" className="text-white/80 no-underline font-light hover:text-white">
-                            Home
-                        </Link>
-                    </li>
-                    <li className="inline-block mr-7 my-2.5 md:my-0">
-                        <Link to="/menu" className="text-white/80 no-underline font-light hover:text-white">
-                            Menu
-                        </Link>
-                    </li>
-                    <li className="inline-block mr-7 my-2.5 md:my-0">
-                        <Link to="/#about" className="text-white/80 no-underline font-light hover:text-white">
-                            About
-                        </Link>
-                    </li>
-                    <li className="inline-block mr-7 my-2.5 md:my-0">
-                        <Link to="/contact" className="text-white/80 no-underline font-light hover:text-white">
-                            Contact
-                        </Link>
-                    </li>
-                    <li className="inline-block my-2.5 md:my-0">
-                        <button
-                            onClick={onCartClick}
-                            className="text-white/80 font-light hover:text-white bg-transparent border-none cursor-pointer relative"
-                        >
-                            🛒 Cart
-                            {totalItems > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                                    {totalItems}
-                                </span>
-                            )}
-                        </button>
-                    </li>
-                </ul>
+                {/* Mobile Menu */}
+                {mobileMenuOpen && (
+                    <div className="md:hidden mt-4 pb-4 border-t border-[#d4c5a0] pt-4">
+                        <ul className="space-y-3">
+                            <li>
+                                <Link to="/menu" className="block text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a]" onClick={() => setMobileMenuOpen(false)}>
+                                    Menu
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/#about" className="block text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a]" onClick={() => setMobileMenuOpen(false)}>
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/contact" className="block text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a]" onClick={() => setMobileMenuOpen(false)}>
+                                    Contact
+                                </Link>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => { onCartClick(); setMobileMenuOpen(false); }}
+                                    className="block text-[#2c2c2c] text-sm font-normal hover:text-[#b8956a] bg-transparent border-none cursor-pointer"
+                                >
+                                    Cart ({totalItems})
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </nav>
         </header>
     );
