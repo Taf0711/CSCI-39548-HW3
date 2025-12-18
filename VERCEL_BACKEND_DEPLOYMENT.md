@@ -28,7 +28,7 @@ The backend is now configured to run as a Vercel serverless function.
 5. **Environment Variables** (IMPORTANT!):
    Click "Environment Variables" and add:
    - **Key**: `MONGODB_URI`
-   - **Value**: `mongodb+srv://tafseersf92_db_user:qUZM2sMHhIEW647H@cluster0.bmqy04.mongodb.net/restaurant-db?retryWrites=true&w=majority`
+   - **Value**: `YOUR_MONGODB_ATLAS_CONNECTION_STRING` (Get this from MongoDB Atlas)
    - **Apply to**: All (Production, Preview, Development)
    
    - **Key**: `NODE_ENV`
@@ -122,7 +122,7 @@ npm run seed
 
 ### Backend (Vercel)
 ```
-MONGODB_URI=mongodb+srv://tafseersf92_db_user:qUZM2sMHhIEW647H@cluster0.bmqy04.mongodb.net/restaurant-db?retryWrites=true&w=majority
+MONGODB_URI=your_mongodb_atlas_connection_string_here
 NODE_ENV=production
 ```
 
