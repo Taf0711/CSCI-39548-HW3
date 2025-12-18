@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema } from 'mongoose';
-import { IMenuItem } from './MenuItem.js';
+import { IMenuItem } from './MenuItem';
 
 interface IOrderItem {
     menuItem: mongoose.Types.ObjectId | IMenuItem;

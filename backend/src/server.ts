@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import connectDB from './config/database.js';
-import menuRoutes from './routes/menuRoutes.js';
-import orderRoutes from './routes/orderRoutes.js';
+import connectDB from './config/database';
+import menuRoutes from './routes/menuRoutes';
+import orderRoutes from './routes/orderRoutes';
 
 // Load environment variables
 dotenv.config();

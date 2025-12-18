@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import MenuItem from '../models/MenuItem.js';
+import MenuItem from '../models/MenuItem';
 
 // @desc    Get all menu items
 // @route   GET /api/menu

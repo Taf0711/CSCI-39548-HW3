@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-import connectDB from './config/database.js';
-import MenuItem from './models/MenuItem.js';
+import connectDB from './config/database';
+import MenuItem from './models/MenuItem';
 
 // Load environment variables
 dotenv.config();
